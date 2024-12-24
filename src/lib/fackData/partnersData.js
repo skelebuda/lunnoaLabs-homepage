@@ -17,7 +17,7 @@ export const partnersData = [
     {
         id:4,
         link:"",
-        src:"/images/shapes/openAI_logo.png",
+        src:"/images/shapes/openAI_Logo.png",
     }
 
 ]
