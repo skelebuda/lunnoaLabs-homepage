@@ -4,14 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import hubSpot3 from "../../../../public/images/shapes/hubSpot3-2.png"
-import shopify3 from "../../../../public/images/shapes/shopify3-1.png"
+import sharepoint from "../../../../public/images/shapes/SharePoint.png"
 import zapier3 from "../../../../public/images/shapes/zapier3-3.png"
 import jira3 from "../../../../public/images/shapes/jira3-4.png"
-import slack3 from "../../../../public/images/shapes/slack3-6.png"
+import sap from "../../../../public/images/shapes/SAP_Logo.png"
 import analytics3 from "../../../../public/images/shapes/google-analytics3-5.png"
 import notion3 from "../../../../public/images/shapes/notion3-9.png"
 import paypal3 from "../../../../public/images/shapes/paypal3-7.png"
-import hotjar3 from "../../../../public/images/shapes/hotjar3-8.png"
+import salesforce from "../../../../public/images/shapes/salesforce.png"
 import mailchimp3 from "../../../../public/images/shapes/mailchimp3-11.png"
 import stripe3 from "../../../../public/images/shapes/stripe3-12.png"
 import googledrive3 from "../../../../public/images/shapes/googledrive3-10.png"
@@ -24,7 +24,7 @@ const softwareList = [
     },
     {
         id: 2,
-        logo: shopify3,
+        logo: sharepoint,
         link: ""
     },
     {
@@ -39,7 +39,7 @@ const softwareList = [
     },
     {
         id: 5,
-        logo: slack3,
+        logo: sap,
         link: ""
     },
     {
@@ -59,7 +59,7 @@ const softwareList = [
     },
     {
         id: 9,
-        logo: hotjar3,
+        logo: salesforce,
         link: ""
     },
     {
@@ -84,7 +84,7 @@ const softwareList = [
     },
     {
         id: 14,
-        logo: shopify3,
+        logo: sharepoint,
         link: ""
     },
     {
@@ -99,12 +99,12 @@ const softwareList = [
     },
     {
         id: 17,
-        logo: slack3,
+        logo: sap,
         link: ""
     },
     {
         id: 18,
-        logo: hotjar3,
+        logo: salesforce,
         link: ""
     },
     {

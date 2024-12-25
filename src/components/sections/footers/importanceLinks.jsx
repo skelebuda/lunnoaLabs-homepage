@@ -5,23 +5,6 @@ import React from 'react'
 const ImportanceLinks = ({ color }) => {
     const importanceLinks = [
         {
-            id: 1,
-            title: "Company",
-            links: [
-                {
-                    id: 1,
-                    path: "/about-us",
-                    label: "About Us"
-                },
-                {
-                    id: 2,
-                    path: "/career",
-                    label: "Careers"
-                },
-            ]
-
-        },
-        {
             id: 3,
             title: "Social",
             links: [
@@ -49,7 +32,7 @@ const ImportanceLinks = ({ color }) => {
                 },
                 {
                     id: 2,
-                    path: "#",
+                    path: "/privacy",
                     label: "Privacy"
                 },
 

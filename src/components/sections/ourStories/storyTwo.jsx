@@ -53,7 +53,7 @@ const StoryTwo = () => {
                     </div>
                     <div className='mx-auto lg:mr-0 order-0 lg:order-1'>
                         <SlideUp>
-                            <Image src={"/images/resource/our-story1-1.png"} width={554} height={629} alt='stroy background' />
+                            <Image src={"/images/sasa.jpg"} width={554} height={629} alt='stroy background' />
                         </SlideUp>
                     </div>
                 </div>

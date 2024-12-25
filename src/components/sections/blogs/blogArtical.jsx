@@ -17,12 +17,6 @@ const BlogArtical = ({ sidebarShow }) => {
         <section className='lg:py-15 py-9'>
             <div className={`${sidebarShow ? "" : ""} max-w-[1350px] mx-auto px-[15px]`}>
                 <div className={`grid  ${sidebarShow ? "xl:grid-cols-[33%_66%] lg:grid-cols-[40%_60%] grid-cols-1" : "grid-cols-1"} gap-12.5`}>
-                    {
-                        sidebarShow &&
-                        <div className=''>
-                            <SideBar blog={true} search={true} />
-                        </div>
-                    }
                     <div>
                         <div>
                             <Title size={"5xl"} className={"lg:text-5xl md:text-4.5xl text-3xl "}>New Study: Instagram Reels Outperform TikTok & Facebook Videos.</Title>

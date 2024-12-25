@@ -8,6 +8,7 @@ const CustomCursor = dynamic(() => import('@/components/ui/customCursor'), { ssr
 const Setting = dynamic(() => import('@/components/ui/setting'), { ssr: false })
 import HeaderTwo from "@/components/sections/headers/headerTwo"
 import FooterTwo from "@/components/sections/footers/footerTwo"
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
           <HeaderTwo haveOvcanvsIcon={true} haveShadow={true}/>
             {children}
             <FooterTwo/>
+            <GoogleTagManager gtmId="G-7RY5KP3TS4" />
             {/*<Setting />*/}
             <ScrollCircle />
             <CustomCursor />
