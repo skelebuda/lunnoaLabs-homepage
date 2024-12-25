@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import Title from '@/components/ui/title'
 import { servicesDataTwo } from '@/lib/fackData/servicesDataTwo'
 
-const ServiceTwo = () => {
+const ServiceTwo = () => { 
     return (
         <section className='lg:pt-[120px] pt-16 lg:pb-15 pb-9'>
             <div className='max-w-[1350px] mx-auto px-[15px]'>
