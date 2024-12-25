@@ -16,7 +16,7 @@ import mailchimp3 from "../../../../public/images/shapes/mailchimp3-11.png"
 import stripe3 from "../../../../public/images/shapes/stripe3-12.png"
 import googledrive3 from "../../../../public/images/shapes/googledrive3-10.png"
 
-const softwareList = [
+const softwareList = [ 
     {
         id: 1,
         logo: hubSpot3,
