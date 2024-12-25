@@ -11,12 +11,12 @@ import sap from "../../../../public/images/shapes/SAP_Logo.png"
 import analytics3 from "../../../../public/images/shapes/google-analytics3-5.png"
 import notion3 from "../../../../public/images/shapes/notion3-9.png"
 import paypal3 from "../../../../public/images/shapes/paypal3-7.png"
-import salesforce from "../../../../public/images/shapes/salesforce.png"
+import salesforce from "../../../../public/images/shapes/slack3-6.png"
 import mailchimp3 from "../../../../public/images/shapes/mailchimp3-11.png"
 import stripe3 from "../../../../public/images/shapes/stripe3-12.png"
 import googledrive3 from "../../../../public/images/shapes/googledrive3-10.png"
 
-const softwareList = [ 
+const softwareList = [
     {
         id: 1,
         logo: hubSpot3,
