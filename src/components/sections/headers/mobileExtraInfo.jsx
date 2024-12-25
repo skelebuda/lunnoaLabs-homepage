@@ -6,6 +6,7 @@ import SocialIcons from '../../ui/socialIcons';
 const MobileExtraInfo = () => {
     return (
         <div>
+            {/*}
             <ul className='px-4 mt-3'>
                 {
                     headerExtraInfo.map(({ icon, id, label, link }) => {
@@ -21,15 +22,16 @@ const MobileExtraInfo = () => {
                 }
 
             </ul>
+            */}
             <div className='text-secondary-foreground dark:text-muted-foreground px-4 mt-10'>
                 <ul className='mb-[26px]'>
                     <li className='flex items-center gap-3'>
                         <span className='mt-[3px]'><FaRegEnvelope /></span>
-                        <Link href={"mailto:contact@nextmarketing.com"} className='text-base'>contact@nextpro.com</Link>
+                        <Link href={"mailto:contact@nextmarketing.com"} className='text-base'>info@lunnoalabs.ch</Link>
                     </li>
                     <li className='flex items-center gap-3 mt-[9px]'>
                         <span><FaPhoneFlip /></span>
-                        <Link href={"tel:17186385000"} className='text-base'>+1.718.638.5000</Link>
+                        <Link href={"tel:17186385000"} className='text-base'>+41 76 338 35 16</Link>
                     </li>
                 </ul>
                 <SocialIcons />

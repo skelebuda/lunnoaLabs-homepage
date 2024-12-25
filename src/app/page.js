@@ -13,7 +13,7 @@ import SubscribeTwo from '@/components/sections/subscribes/subscribeTwo'
 import TestimonialOne from '@/components/sections/testimonials/testimonialOne'
 
 export const metadata = {
-  title: "Lunnoa Labs AI AGent Development",
+  title: "Lunnoa Labs AI Agent Development",
   description: "NextPro is a modern Next.js and Tailwind CSS Template there features General Marketing, Social Media Marketing, AI in Marketing, Paid Advertising, Video Marketing, Analytics and Reporting, Industry news & Trends, E-commerce Marketing",
 };
 

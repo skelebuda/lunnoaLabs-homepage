@@ -37,6 +37,7 @@ const MobileMenu = ({ data }) => {
                                 <Image src={"/images/logo-light.png"} width={179} height={53} alt='logo-white' className='w-full h-full' />
                             </Link>
                         </div>
+                        {/*
                         <ul className='pt-9 pb-8'>
                             {
                                 data.map(({ id, path, lable, dropDown, megaMenu }) => {
@@ -49,7 +50,7 @@ const MobileMenu = ({ data }) => {
                                             {
                                                 dropDown.length &&
                                                 <ul className={`transition-all duration-500 ${mainDropDownActive === id ? "max-h-[600px] overflow-auto pt-3 no-scrollbar" : "max-h-0 overflow-hidden"}`}>
-                                                    { /* start dropdonw */
+                                              
                                                         dropDown.map(({ id, lable, path, tag, subDropdonwn }) => {
                                                             return (
                                                                 <li key={id} onClick={() => setSubDropDownActive(subDropDownActive === id ? null : id)} className=' relative px-7 group/subDropdwon'>
@@ -74,12 +75,12 @@ const MobileMenu = ({ data }) => {
                                                                 </li>
                                                             )
                                                         })
-                                                        /* end dropdonw */
+                                                  
                                                     }
                                                 </ul>
                                             }
 
-                                            {/* mega menu start */
+                              
                                                 megaMenu.length &&
                                                 <ul className={`transition-all duration-500 ${mainDropDownActive === id ? "max-h-[2200px] overflow-auto pt-3 no-scrollbar" : "max-h-0 overflow-hidden"}`}>
                                                     {
@@ -97,13 +98,14 @@ const MobileMenu = ({ data }) => {
                                                         })
                                                     }
                                                 </ul>
-                                                /* mega menu end */
+                                     
                                             }
                                         </li>
                                     )
                                 })
                             }
                         </ul>
+                        */}
                         <MobileExtraInfo />
                     </div>
                 </SheetContent>

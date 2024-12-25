@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
           <HeaderTwo haveOvcanvsIcon={true} haveShadow={true}/>
             {children}
             <FooterTwo/>
-            <Setting />
+            {/*<Setting />*/}
             <ScrollCircle />
             <CustomCursor />
           </CountryProvider>
