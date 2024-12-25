@@ -13,7 +13,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 const inter = Inter({
   subsets: ["latin"],
   display: 'swap',
-  variable: "--inter"
+  variable: "--inter" 
 });
 const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
