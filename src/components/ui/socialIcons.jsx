@@ -10,10 +10,10 @@ const SocialIcons = ({color, prantBorder}) => {
     return (
         <ul className={`flex items-center gap-5 ${color}`}>
             <li className={cn(`hover:text-primary-foreground transition-all duration-300 ${prantBorder}`)}>
-                <Link href={"https://twitter.com/?lang=en"} aria-label="twitter"><FaXTwitter /></Link>
+                <Link href={"https://x.com/lunnoalabs"} aria-label="twitter"><FaXTwitter /></Link>
             </li>
             <li className={cn(`hover:text-primary-foreground transition-all duration-300 ${prantBorder}`)}>
-                <Link href={"https://bd.linkedin.com/"} aria-label="linkedin"><FaLinkedin /></Link>
+                <Link href={"https://www.linkedin.com/company/71721483"} aria-label="linkedin"><FaLinkedin /></Link>
             </li>
         </ul>
     )
