@@ -8,8 +8,6 @@ const CustomCursor = dynamic(() => import('@/components/ui/customCursor'), { ssr
 const Setting = dynamic(() => import('@/components/ui/setting'), { ssr: false })
 import HeaderTwo from "@/components/sections/headers/headerTwo"
 import FooterTwo from "@/components/sections/footers/footerTwo"
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
-import { Script } from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +33,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7RY5KP3TS4');
+            `,
+          }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7RY5KP3TS4"
+        />
+      </head>
       <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${dm_sans.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
@@ -43,11 +58,9 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <CountryProvider>
-          <HeaderTwo haveOvcanvsIcon={true} haveShadow={true}/>
+            <HeaderTwo haveOvcanvsIcon={true} haveShadow={true}/>
             {children}
             <FooterTwo/>
-            
-            {/*<Setting />*/}
             <ScrollCircle />
             <CustomCursor />
           </CountryProvider>
