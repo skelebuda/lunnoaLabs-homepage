@@ -8,7 +8,7 @@ const CustomCursor = dynamic(() => import('@/components/ui/customCursor'), { ssr
 const Setting = dynamic(() => import('@/components/ui/setting'), { ssr: false })
 import HeaderTwo from "@/components/sections/headers/headerTwo"
 import FooterTwo from "@/components/sections/footers/footerTwo"
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="G-7RY5KP3TS4" />
+      <GoogleAnalytics gaId="G-7RY5KP3TS4" />
       <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${dm_sans.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
