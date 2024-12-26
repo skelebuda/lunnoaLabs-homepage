@@ -1,12 +1,10 @@
 "use client"
 import React from 'react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 //import { IoIosArrowDown } from 'react-icons/io'
 //import { logEvent, analyticsEvents } from '@/utils/analytics';
 
 import Logo from '@/components/ui/logo'
-import { Button } from '@/components/ui/button'
 import { menuList } from '@/lib/fackData/menuList'
 //import MegaMenu from './megaMenu'
 //import DropDownMenu from './dropDownMenu'

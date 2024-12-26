@@ -1,3 +1,4 @@
+"use client"
 import SlideRight from '@/components/animations/slideRight'
 import SlideUp from '@/components/animations/slideUp'
 import { Button } from '@/components/ui/button'
