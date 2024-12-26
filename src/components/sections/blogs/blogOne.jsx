@@ -17,9 +17,7 @@ const POSTS_QUERY = `*[
 const options = { next: { revalidate: 30 } };
 
 const  BlogOne = async () => {
-    console.log("reading posts")
     const posts = await client.fetch(POSTS_QUERY, {}, options);
-    console.log(posts)
     return (
         <section className='lg:py-15 py-9'>
             <div className='max-w-[1350px] mx-auto px-[15px]'>
