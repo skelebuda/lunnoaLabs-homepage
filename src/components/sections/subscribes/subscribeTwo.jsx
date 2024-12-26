@@ -12,14 +12,9 @@ import {
 import Input from '@/components/ui/input'
 import SlideUp from '@/components/animations/slideUp'
 import Link from 'next/link'
+import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
 
 const SubscribeTwo = () => {
-        const handleClick = () => {
-            logEvent(analyticsEvents.BUTTON_CLICK, {
-                button_name: "Schedule a Call",
-                page_location: window.location.href
-            });
-        };
     return (
         <section className='lg:py-15 py-9'>
             <SlideUp>
@@ -35,9 +30,7 @@ const SubscribeTwo = () => {
                         <div className='relative flex items-center justify-between'>
                             <Dialog>
                                 <Link href="https://calendly.com/lunnoalabs/30min">
-                                    <Button size="lg" className="h-[64px] px-8" onClick={handleClick}>
-                                        Schedule a Call
-                                    </Button>
+                                <AnalyticsButton />
                                     </Link>
                                 <DialogContent className="sm:max-w-[425px]">
                                     <DialogTitle>Book Your Free Consultation</DialogTitle>

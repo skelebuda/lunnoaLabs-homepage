@@ -16,6 +16,7 @@ import MobileMenu from './mobileMenu'
 import StickyHeader from '@/components/ui/stickyHeader';
 import TopHeader from './topHeader';
 import { analyticsEvents, logEvent } from '@/lib/utils/analytics';
+import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
 
 const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
     // haveOvcanvsIcon and haveShadow true prosp come from home page two
@@ -66,9 +67,7 @@ const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
                                     </ul>
                                 </nav>
                                 <div className='hidden xl:flex items-center gap-5'>
-                                    <Button asChild size="xl" onClick={handleClick} >
-                                        <Link href={"https://calendly.com/lunnoalabs/30min"}>  Let’s Talk </Link>
-                                    </Button>
+                                <AnalyticsButton /> 
                                     {/*
                                     <Offcanvas>
                                         <OffcanvasTrigger>

@@ -5,6 +5,7 @@ import PlayIcon from '@/components/ui/playIcon'
 import Title from '@/components/ui/title'
 import Link from 'next/link'
 import React from 'react'
+import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
 
 const StoryContentOne = () => {
         const handleClick = () => {
@@ -28,9 +29,7 @@ const StoryContentOne = () => {
 
                 <div className='flex items-center sm:gap-[32px] gap-6 md:pt-[55px] pt-7 pb-[22px]'>
                     <div>
-                        <Button asChild onClick={handleClick}>
-                            <Link href="https://calendly.com/lunnoalabs/30min">Let's Talk</Link>
-                        </Button>
+                    <AnalyticsButton />
                     </div>
                     {/*
                     <div className='flex items-center gap-2'>
