@@ -4,8 +4,22 @@ import { blogData } from '@/lib/fackData/blogData'
 import React from 'react'
 import CardOne from './cardOne'
 import SlideUp from '@/components/animations/slideUp'
+import { SanityDocument } from 'next-sanity'
 
-const BlogOne = () => {
+import { client } from '@/lib/sanity/SanityClient'
+
+
+const POSTS_QUERY = `*[
+    _type == "post"
+    && defined(slug.current)
+  ]|order(publishedAt desc)[0...12]{_id, title, slug, author, publishedAt, "imageUrl": image.asset->url}`;
+
+const options = { next: { revalidate: 30 } };
+
+const  BlogOne = async () => {
+    console.log("reading posts")
+    const posts = await client.fetch(POSTS_QUERY, {}, options);
+    console.log(posts)
     return (
         <section className='lg:py-15 py-9'>
             <div className='max-w-[1350px] mx-auto px-[15px]'>
@@ -18,7 +32,7 @@ const BlogOne = () => {
 
                 <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 pt-7.5 gap-7.5 justify-between'>
                     {
-                        blogData.slice(0, 3).map(({ id, author, date, thumb, title, category }) => <CardOne key={id} id={id} title={title} thumb={thumb} author={author} date={date} category={category} />)
+                        posts.slice(0, 3).map(({ id, author, publishedAt, title, imageUrl, slug }) => <CardOne key={id} id={id} title={title} thumb={imageUrl} author={author} date={publishedAt} slug={slug} />)
                     }
                 </div>
             </div>
