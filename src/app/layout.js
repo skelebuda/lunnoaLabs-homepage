@@ -34,6 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-7RY5KP3TS4" />
       <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${dm_sans.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
@@ -45,7 +46,7 @@ export default function RootLayout({ children }) {
           <HeaderTwo haveOvcanvsIcon={true} haveShadow={true}/>
             {children}
             <FooterTwo/>
-            <GoogleTagManager gtmId="G-7RY5KP3TS4" />
+            
             {/*<Setting />*/}
             <ScrollCircle />
             <CustomCursor />
