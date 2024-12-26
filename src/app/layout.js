@@ -35,7 +35,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-         {/*   <head>
+         <head>
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-7RY5KP3TS4`}
@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-7RY5KP3TS4');
           `}
         </Script>
-      </head>*/}
+      </head>
       <body className={`${inter.variable} ${plus_jakarta_sans.variable} ${dm_sans.variable}`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
