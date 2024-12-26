@@ -39,6 +39,9 @@ export async function generateStaticParams() {
   }))
 }
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 30;
+
 const BlogArticle = async ({ params }) => {
     const post = await client.fetch(POST_QUERY, params, options)
     const postImageUrl = post.image ? urlFor(post.image)?.width(1320).height(568).url() : null
