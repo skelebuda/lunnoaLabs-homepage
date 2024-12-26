@@ -8,7 +8,7 @@ import { PortableText } from "next-sanity"
 import imageUrlBuilder from "@sanity/image-url"
 import { client } from '@/lib/sanity/SanityClient'
 
-// Query modified to match your schema
+// Query to get a single post
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   title,
   image,
@@ -18,6 +18,11 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   slug
 }`
 
+// Query to get all post slugs
+const SLUGS_QUERY = `*[_type == "post"]{
+  "slug": slug.current
+}`
+
 const { projectId, dataset } = client.config()
 const urlFor = (source) =>
   projectId && dataset
@@ -25,6 +30,14 @@ const urlFor = (source) =>
     : null
 
 const options = { next: { revalidate: 30 } }
+
+// Add this function to generate static params
+export async function generateStaticParams() {
+  const posts = await client.fetch(SLUGS_QUERY)
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
 
 const BlogArticle = async ({ params }) => {
     const post = await client.fetch(POST_QUERY, params, options)
@@ -70,7 +83,6 @@ const BlogArticle = async ({ params }) => {
                             
                             <hr className='lg:my-12.5 my-8 text-[#B0C2E2]' />
                             
-                            {/* Simple Author section since author is just a string */}
                             <div className='max-w-[1080px] mx-auto lg:px-12.5'>
                                 <div className='flex items-center gap-4'>
                                     <div>
