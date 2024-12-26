@@ -40,7 +40,7 @@ const TopHeader = ({ color, bgColor, darkBg }) => {
                         <p className='h-7.5 w-[1px] bg-accent dark:bg-[#717A83]'></p>
                         <p className={cn(`flex items-center gap-4 ${color}`)}>
                             <Call />
-                            <Link href={"tel:+17186385000"}><span className='font-semibold'>Call us:</span> <span className='multiline-hover'>+41 76 338 35 16 </span> </Link>
+                            <Link href={"tel:+41763383516"}><span className='font-semibold'>Call us:</span> <span className='multiline-hover'>+41 76 338 35 16 </span> </Link>
                         </p>
                     </div>
                     {/*  left side end */}

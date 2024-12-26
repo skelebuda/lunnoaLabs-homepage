@@ -31,7 +31,7 @@ const MobileExtraInfo = () => {
                     </li>
                     <li className='flex items-center gap-3 mt-[9px]'>
                         <span><FaPhoneFlip /></span>
-                        <Link href={"tel:17186385000"} className='text-base'>+41 76 338 35 16</Link>
+                        <Link href={"tel:41763383516"} className='text-base'>+41 76 338 35 16</Link>
                     </li>
                 </ul>
                 <SocialIcons />

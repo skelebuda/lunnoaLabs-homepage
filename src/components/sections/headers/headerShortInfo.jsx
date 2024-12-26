@@ -35,7 +35,7 @@ const HeaderShortInfo = () => {
                 <div className='text-[#7C848C] mb-[26px]'>
                     <p>243, Eastern Parkway, Brooklyn, New York</p>
                     <p> <Link href={"mailto:ask@next.com"}>ask@next.com</Link></p>
-                    <p>Ph:<Link href={"tel:17186385000"}>+1.718.638.5000</Link></p>
+                    <p>Ph:<Link href={"tel:41763383516"}>+1.718.638.5000</Link></p>
                 </div>
                 <SocialIcons/>
             </div>

@@ -62,7 +62,7 @@ const ContactMap = () => {
                             <Card icon={team_icon} title={'Address'} isIcon={false} desc={'243, Eastern Parkway, Brooklyn, New York, USA'} />
                             <Card icon={skills_icon} title={'Contact'} isIcon={false} desc={`                       
                              <p> <span class='font-semibold'>Email:</span> <a href={"mailto:info@next.com"} class='relative hover-underline after:h-[1px] after:bg-muted'> info@next.com</a> </p>
-                             <p> <span class='font-semibold'>Call us:</span> <a href={"tal:+17186385000"} class='relative hover-underline after:h-[1px] after:bg-muted'> +1 718-638-5000</Link> </p>
+                             <p> <span class='font-semibold'>Call us:</span> <a href={"tal:+41763383516"} class='relative hover-underline after:h-[1px] after:bg-muted'> +1 718-638-5000</Link> </p>
                              `} />
                             <Card icon={content_icon} title={'Social'} desc={<SocialIcons prantBorder={"text-2xl mt-[22px]"}/>} isSocalIcon={true} />
                         </div>

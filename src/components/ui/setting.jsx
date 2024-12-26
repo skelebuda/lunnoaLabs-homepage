@@ -76,7 +76,7 @@ const Setting = () => {
                             <p>I'm here, ready to answer any types of questions</p>
                             <ul className='py-4'>
                                 <li><Link href={"mailto:contact@nextpro.com"} className='multiline-hover'>contact@nextpro.com</Link></li>
-                                <li><Link href={"tel:+17186385000"}><span className='font-semibold'>Call us:</span> <span className='multiline-hover'>+1 718-638-5000 </span> </Link></li>
+                                <li><Link href={"tel:+41763383516"}><span className='font-semibold'>Call us:</span> <span className='multiline-hover'>+1 718-638-5000 </span> </Link></li>
                             </ul>
                             <SocialIcons />
                         </div>
