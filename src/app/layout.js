@@ -27,8 +27,8 @@ const dm_sans = DM_Sans({
 })
 
 export const metadata = {
-  title: "NextPro",
-  description: "NextPro is a modern Next.js and Tailwind CSS Template there features General Marketing, Social Media Marketing, AI in Marketing, Paid Advertising, Video Marketing, Analytics and Reporting, Industry news & Trends, E-commerce Marketing",
+  title: "Lunnoa Labs",
+  description: "Your Enterprise, Powered by AI Agents",
 };
 
 export default function RootLayout({ children }) {
