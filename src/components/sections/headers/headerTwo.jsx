@@ -14,7 +14,7 @@ import MobileMenu from './mobileMenu'
 import StickyHeader from '@/components/ui/stickyHeader';
 import TopHeader from './topHeader';
 import { analyticsEvents, logEvent } from '@/lib/utils/analytics';
-import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
+import AnalyticsButton from '@/components/ui/analyticsButton'; 
 
 const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
     // haveOvcanvsIcon and haveShadow true prosp come from home page two

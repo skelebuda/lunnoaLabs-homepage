@@ -13,7 +13,7 @@ import {
 import Input from '@/components/ui/input'
 import SlideUp from '@/components/animations/slideUp'
 import Link from 'next/link'
-import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
+import AnalyticsButton from '@/components/ui/analyticsButton'; 
 
 const SubscribeTwo = () => {
     return (

@@ -6,7 +6,7 @@ import PlayIcon from '@/components/ui/playIcon'
 import Title from '@/components/ui/title'
 import Link from 'next/link'
 import React from 'react'
-import AnalyticsButton from '@/components/ui/AnalyticsButton'; 
+import AnalyticsButton from '@/components/ui/analyticsButton'; 
 
 const StoryContentOne = () => {
         const handleClick = () => {
