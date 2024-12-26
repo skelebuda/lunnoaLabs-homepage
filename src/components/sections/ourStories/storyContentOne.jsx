@@ -7,6 +7,12 @@ import Link from 'next/link'
 import React from 'react'
 
 const StoryContentOne = () => {
+        const handleClick = () => {
+            logEvent(analyticsEvents.BUTTON_CLICK, {
+                button_name: "Lets Talk Story",
+                page_location: window.location.href
+            });
+        };
     return (
         <div>
             <SlideUp>
@@ -22,7 +28,7 @@ const StoryContentOne = () => {
 
                 <div className='flex items-center sm:gap-[32px] gap-6 md:pt-[55px] pt-7 pb-[22px]'>
                     <div>
-                        <Button asChild>
+                        <Button asChild onClick={handleClick}>
                             <Link href="https://calendly.com/lunnoalabs/30min">Let's Talk</Link>
                         </Button>
                     </div>

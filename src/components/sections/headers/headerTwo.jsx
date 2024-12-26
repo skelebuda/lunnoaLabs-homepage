@@ -2,22 +2,32 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import { IoIosArrowDown } from 'react-icons/io'
+//import { IoIosArrowDown } from 'react-icons/io'
+//import { logEvent, analyticsEvents } from '@/utils/analytics';
 
 import Logo from '@/components/ui/logo'
 import { Button } from '@/components/ui/button'
 import { menuList } from '@/lib/fackData/menuList'
-import MegaMenu from './megaMenu'
-import DropDownMenu from './dropDownMenu'
+//import MegaMenu from './megaMenu'
+//import DropDownMenu from './dropDownMenu'
 import MobileMenu from './mobileMenu'
-import HeaderShortInfo from './headerShortInfo'
-import { Offcanvas, OffcanvasContent, OffcanvasOverlay, OffcanvasTrigger, OffcanvasClose } from '@/components/ui/offcanvas';
+//import HeaderShortInfo from './headerShortInfo'
+//import { Offcanvas, OffcanvasContent, OffcanvasOverlay, OffcanvasTrigger, OffcanvasClose } from '@/components/ui/offcanvas';
 import StickyHeader from '@/components/ui/stickyHeader';
 import TopHeader from './topHeader';
+import { analyticsEvents, logEvent } from '@/lib/utils/analytics';
 
 const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
     // haveOvcanvsIcon and haveShadow true prosp come from home page two
     const pathName = usePathname()
+
+    const handleClick = () => {
+        logEvent(analyticsEvents.BUTTON_CLICK, {
+            button_name: "Lets Talk Header",
+            page_location: window.location.href
+        });
+    };
+
     return (
         <StickyHeader>
             <header id='header' className='sticky top-0 w-full transition-[top] duration-300 z-40 bg-background'>
@@ -56,7 +66,7 @@ const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
                                     </ul>
                                 </nav>
                                 <div className='hidden xl:flex items-center gap-5'>
-                                    <Button asChild size="xl">
+                                    <Button asChild size="xl" onClick={handleClick} >
                                         <Link href={"https://calendly.com/lunnoalabs/30min"}>  Let’s Talk </Link>
                                     </Button>
                                     {/*
