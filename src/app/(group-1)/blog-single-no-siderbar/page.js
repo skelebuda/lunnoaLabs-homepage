@@ -14,6 +14,6 @@ const BLogSIngle2 = () => {
             <BlogArtical sidebarShow={false} />
         </main>
     )
-}
+} 
 
 export default BLogSIngle2
