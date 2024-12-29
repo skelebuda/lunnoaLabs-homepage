@@ -24,7 +24,7 @@ const  BlogOne = async () => {
                 <SlideUp>
                     <div className='flex flex-col items-center'>
                         <Button variant="secondary">Our Blog</Button>
-                        <Title size={"5xl"} className="pt-6 text-center max-w-[898px]">From Our Blog – Learn, Grow, & Succeed!</Title>
+                        <Title size={"5xl"} className="pt-6 text-center max-w-[898px]">From Our Blog – Learn, Build, & Automate!</Title>
                     </div>
                 </SlideUp>
 

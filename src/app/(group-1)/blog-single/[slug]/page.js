@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import QuoteIcon from '../../../../../public/icons/quoteIcon'
 import Author from '../../../../components/sections/blogs/author'
-import { PortableText } from "next-sanity"
+import {PortableText} from '@portabletext/react'
 import imageUrlBuilder from "@sanity/image-url"
 import { client } from '@/lib/sanity/SanityClient'
 
@@ -44,6 +44,7 @@ export const revalidate = 30;
 
 const BlogArticle = async ({ params }) => {
     const post = await client.fetch(POST_QUERY, params, options)
+    console.log(post)
     const postImageUrl = post.image ? urlFor(post.image)?.width(1320).height(568).url() : null
 
     return (

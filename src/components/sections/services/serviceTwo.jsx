@@ -29,11 +29,6 @@ const ServiceTwo = () => {
                                     </div>
                                     <Link href={"/service-details"} className='text-xl font-extrabold text-muted-foreground leading-[140%] multiline-hover'>{service_name}</Link>
                                     <p className='lg:pt-6 pt-3'>{description}</p>
-                                    <ul className='mt-4 text-sm text-muted-foreground'>
-                                        {features.map((feature, index) => (
-                                            <li key={index} className='mb-2'>{feature}</li>
-                                        ))}
-                                    </ul>
                                 </div>
                             ))}
                         </div>
