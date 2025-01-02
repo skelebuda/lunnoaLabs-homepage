@@ -31,6 +31,62 @@ const urlFor = (source) =>
 
 const options = { next: { revalidate: 30 } }
 
+// Configure PortableText components
+const components = {
+  types: {
+    image: ({value}) => {
+      if (!value?.asset?._ref) {
+        return null
+      }
+      return (
+        <div className="relative w-full h-96 my-8">
+          <Image
+            src={urlFor(value).url()}
+            alt={value.alt || 'Blog post image'}
+            fill
+            className="object-cover rounded-lg"
+          />
+        </div>
+      )
+    },
+    code: ({value = {}}) => {
+      const {code, language} = value
+      return (
+        <pre className="bg-gray-100 rounded-lg p-4 overflow-x-auto">
+          <code className={`language-${language}`}>{code}</code>
+        </pre>
+      )
+    },
+  },
+  marks: {
+    link: ({value, children}) => {
+      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+      return (
+        <Link href={value?.href} target={target} className="text-blue-600 hover:underline">
+          {children}
+        </Link>
+      )
+    },
+    strong: ({children}) => <strong className="font-bold">{children}</strong>,
+    em: ({children}) => <em className="italic">{children}</em>,
+  },
+  block: {
+    h1: ({children}) => <h1 className="text-4xl font-bold mt-8 mb-4">{children}</h1>,
+    h2: ({children}) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
+    h3: ({children}) => <h3 className="text-2xl font-bold mt-6 mb-3">{children}</h3>,
+    normal: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
+    blockquote: ({children}) => (
+      <blockquote className="border-l-4 border-gray-200 pl-4 my-4 italic">
+        {children}
+      </blockquote>
+    ),
+  },
+  list: {
+    bullet: ({children}) => <ul className="list-disc pl-6 mb-4">{children}</ul>,
+    number: ({children}) => <ol className="list-decimal pl-6 mb-4">{children}</ol>,
+  },
+}
+
 // Add this function to generate static params
 export async function generateStaticParams() {
   const posts = await client.fetch(SLUGS_QUERY)
@@ -44,7 +100,6 @@ export const revalidate = 30;
 
 const BlogArticle = async ({ params }) => {
     const post = await client.fetch(POST_QUERY, params, options)
-    console.log(post)
     const postImageUrl = post.image ? urlFor(post.image)?.width(1320).height(568).url() : null
 
     return (
@@ -81,8 +136,13 @@ const BlogArticle = async ({ params }) => {
                             )}
                         </div>
                         <div>
-                            <div className='max-w-[1080px] mx-auto lg:pt-12.5 pt-6 lg:px-12.5 prose prose-lg'>
-                                {Array.isArray(post.body) && <PortableText value={post.body} />}
+                            <div className='max-w-[1080px] mx-auto lg:pt-12.5 pt-6 lg:px-12.5'>
+                                {Array.isArray(post.body) && (
+                                    <PortableText 
+                                        value={post.body} 
+                                        components={components}
+                                    />
+                                )}
                             </div>
                             
                             <hr className='lg:my-12.5 my-8 text-[#B0C2E2]' />
