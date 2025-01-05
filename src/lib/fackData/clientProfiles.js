@@ -1,67 +1,35 @@
 export const clientProfiles = [
     {
         id: 1,
-        client_name: "Samantha Brooks",
+        client_name: "Podcast based on Demographics",
         characteristics: [
             {
                 id: 1,
-                character: "Risk Profile: Conservative"
-            },
-            {
-                id: 2,
-                character: "Investment Horizon: Long-term (10+ years)"
-            },
-            {
-                id: 3,
-                character: "ESG Score: 85/100 (Strong focus on sustainability)"
-            },
-            {
-                id: 4,
-                character: "Primary Interests: Fixed Income, Blue Chip Stocks"
-            },
-            {
-                id: 5,
-                character: "Portfolio Goal: Capital Preservation"
-            },
-            {
-                id: 6,
-                character: "Investment Experience: Advanced"
-            },
+                character: "Country: Switzerland"
+            }
         ],
     },
     {
         id: 2,
-        client_name: "Terttu Jerioth",
+        client_name: "Podcast based on profile data",
         characteristics: [
             {
                 id: 1,
                 character: "Risk Profile: Aggressive"
             },
             {
-                id: 2,
-                character: "Investment Horizon: Medium-term (5-7 years)"
+                id: 4,
+                character: "Primary Interests: Tech Stocks, Emerging Markets, Cryptocoins"
             },
             {
                 id: 3,
-                character: "ESG Score: 65/100 (Moderate sustainability focus)"
-            },
-            {
-                id: 4,
-                character: "Primary Interests: Tech Stocks, Emerging Markets"
-            },
-            {
-                id: 5,
-                character: "Portfolio Goal: Capital Growth"
-            },
-            {
-                id: 6,
-                character: "Investment Experience: Intermediate"
-            },
+                character: "ESG Score: 92/100 (Very high sustainability focus)"
+            }
         ],
     },
     {
         id: 3,
-        client_name: "Marlon Nyarai",
+        client_name: "Single Client Podcast",
         characteristics: [
             {
                 id: 1,

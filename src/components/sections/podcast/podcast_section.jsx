@@ -18,6 +18,7 @@ import animationData1 from '/public/images/lottie/profile_analyze.json'
 import animationData2 from '/public/images/lottie/search_documents.json'
 import animationData3 from '/public/images/lottie/writing.json'
 import animationData4 from '/public/images/lottie/recording.json'
+import AudioPlayer from './audioPlayer';
 
 
 
@@ -79,6 +80,8 @@ const tabList = [
 
 
 const Podcast = () => {
+    const [showPlayer, setShowPlayer] = useState(false);
+    const [processingComplete, setProcessingComplete] = useState(false);
     const [selectedProfileId, setSelectedProfileId] = useState(null);
     const [currentStep, setCurrentStep] = useState(null);
     const [progress, setProgress] = useState(0);
@@ -87,72 +90,71 @@ const Podcast = () => {
     const [audioUrl, setAudioUrl] = useState(null);
 
     useEffect(() => {
+        console.log("Effect triggered with:", {
+            isGenerating,
+            currentStep,
+            progress,
+            processingComplete,
+            showPlayer
+        });
+    
         let progressInterval;
         if (isGenerating && currentStep) {
             setProgress(0);
             progressInterval = setInterval(() => {
                 setProgress(prev => {
-                    if (prev >= 100) {
+                    const newProgress = prev + 2;
+                    if (newProgress >= 100) {
                         clearInterval(progressInterval);
+                        
+                        if (currentStep === "recording") {
+                            setTimeout(() => {
+                                setProcessingComplete(true);
+                                setTimeout(() => {
+                                    console.log("Showing player");
+                                    setShowPlayer(true);
+                                }, 1000);
+                            }, 1000);
+                        }
                         return 100;
                     }
-                    return prev + 1;
+                    return newProgress;
                 });
-            }, 100); // Update every 100ms to get smooth animation
-
-            // Clear interval after 10 seconds
+            }, 100);
+    
+            // Modify the timeout to log when it clears
             setTimeout(() => {
                 clearInterval(progressInterval);
                 setProgress(0);
-            }, 10000);
+            }, 5000);
         }
-
+    
         return () => {
             if (progressInterval) {
                 clearInterval(progressInterval);
+                console.log("Cleanup: cleared progress interval");
             }
         };
     }, [currentStep, isGenerating]);
-
+    
     const generatePodcast = async (profileData) => {
         if (!profileData) {
             setError("Please select a client profile first");
             return;
         }
-
+    
         setIsGenerating(true);
         setError(null);
-
+    
         try {
             // Simulate API progress steps
             for (const step of tabList) {
                 setCurrentStep(step.id);
-                // Simulate API call with delay to show progress
-                await new Promise(resolve => setTimeout(resolve, 10000));
+                await new Promise(resolve => setTimeout(resolve, 5000));
             }
             
-            // Replace with your actual API endpoint
-            const response = await fetch('http://your-api-url/generate-podcast/', {
-                method: 'POST',
-                body: JSON.stringify({
-                    client_profile: {
-                        name: profileData.client_name,
-                        characteristics: profileData.characteristics
-                    }
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to generate podcast');
-            }
-
-            const blob = await response.blob();
-            const url = URL.createObjectURL(blob);
-            setAudioUrl(url);
         } catch (err) {
+            console.error("Error fetching audio:", err);
             setError(err.message);
         }
     };
@@ -302,30 +304,47 @@ const Podcast = () => {
                         })}
                     </TabsList>
 
-                            {tabList.map(({ id, tab_content, lottiePath }) => (
-                                <TabsContent
-                                    key={id}
-                                    value={id}
-                                    className="lg:pt-7.5 md:pt-[110px] sm:pt-[190px] pt-[360px]"
-                                >
-                                    <SlideUp>
-                                        <div className="flex lg:flex-row flex-col justify-between bg-[#F4F6FF] dark:bg-[#1c242b] py-7.5 rounded-[30px]">
-                                            <div className="lg:pl-[86px] pl-7.5 pr-7.5 lg:pr-0 xl:max-w-[660px] lg:max-w-[550px]">
-                                                <Title size="4xl">{tabContent[id].title}</Title>
-                                                <p className="pt-5 pb-7.5">{tabContent[id].description}</p>
-                                            </div>
-                                            <div className="pr-7.5 pl-7.5 lg:pl-0 lg:max-w-[540px] w-full pt-7.5 lg:pt-0">
-                                                <Lottie
-                                                animationData={lottiePath}
-                                                autoplay
-                                                loop
-                                                speed={1}
+                    {tabList.map(({ id, tab_content, lottiePath }) => (
+                        <TabsContent
+                            key={id}
+                            value={id}
+                            className="lg:pt-7.5 md:pt-[110px] sm:pt-[190px] pt-[360px]"
+                        >
+                            <SlideUp>
+                                <div className="flex lg:flex-row flex-col justify-between bg-[#F4F6FF] dark:bg-[#1c242b] py-7.5 rounded-[30px]">
+                                    <div className="lg:pl-[86px] pl-7.5 pr-7.5 lg:pr-0 xl:max-w-[660px] lg:max-w-[550px]">
+                                        <Title size="4xl">{tabContent[id].title}</Title>
+                                        <p className="pt-5 pb-7.5">{tabContent[id].description}</p>
+                                        {id === "recording" && processingComplete && (
+                                        <div className="mt-6">
+                                            <p className="text-lg text-primary mb-4">
+                                                {showPlayer ? 
+                                                    "Your personalized podcast is ready to play!" :
+                                                    "Finalizing your podcast..."
+                                                }
+                                            </p>
+                                            {showPlayer && (
+                                                <AudioPlayer 
+                                                    audioUrl={audioUrl}
+                                                    className="mt-4"
+                                                    audioFile={selectedProfileId}
                                                 />
-                                            </div>
+                                            )}
                                         </div>
-                                    </SlideUp>
-                                </TabsContent>
-                            ))}
+                                    )}
+                                    </div>
+                                    <div className="pr-7.5 pl-7.5 lg:pl-0 lg:max-w-[540px] w-full pt-7.5 lg:pt-0">
+                                        <Lottie
+                                            animationData={lottiePath}
+                                            autoplay
+                                            loop
+                                            speed={1}
+                                        />
+                                    </div>
+                                </div>
+                            </SlideUp>
+                        </TabsContent>
+                    ))}
                         </Tabs>
                     </div>
                 )}
