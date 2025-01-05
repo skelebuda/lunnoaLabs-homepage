@@ -11,6 +11,7 @@ import Solutions from '@/components/sections/solutions'
 import Strategy from '@/components/sections/strategy'
 import SubscribeTwo from '@/components/sections/subscribes/subscribeTwo'
 import TestimonialOne from '@/components/sections/testimonials/testimonialOne'
+import Podcast from '@/components/sections/podcast/podcast_section'
 
 export const metadata = {
   title: "Lunnoa Labs AI Agent Development",
@@ -22,13 +23,14 @@ const HomeTwo = () => {
     <main >
       <HeroTwo />
       <ServiceTwo/>
+      <Podcast />
       <StoryTwo />
       {/*<Dashboard />*/}
       <ProvideOne />
       {/*<Strategy/>
       <TestimonialOne/>
       <Solutions/>*/}
-      {/*<PriceTwo />*/}
+      <PriceTwo />
      {/* <FaqOne />*/}
       <BlogOne/>
       <SubscribeTwo/>
