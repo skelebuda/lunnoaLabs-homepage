@@ -26,8 +26,8 @@ const dm_sans = DM_Sans({
 })
 
 export const metadata = {
-  title: "Lunnoa Labs",
-  description: "Your Enterprise, Powered by AI Agents",
+  title: "Lunnoa Labs AI Agent Development",
+  description: "Lunnoa Labs offers AI Agent development services in Switzerland",
 };
 
 export default function RootLayout({ children }) {

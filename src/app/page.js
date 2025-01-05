@@ -1,40 +1,28 @@
-import React from 'react'
-import BlogOne from '@/components/sections/blogs/blogOne'
-import Dashboard from '@/components/sections/dashboard'
-import FaqOne from '@/components/sections/faqs/faqOne'
-import HeroTwo from '@/components/sections/heroes/heroTwo'
-import StoryTwo from '@/components/sections/ourStories/storyTwo'
-import Podcast from '@/components/sections/podcast/podcast_section'
-import ProvideOne from '@/components/sections/provides/provideOne'
-import ServiceTwo from '@/components/sections/services/serviceTwo'
-import Solutions from '@/components/sections/solutions'
-import Strategy from '@/components/sections/strategy'
-import SubscribeTwo from '@/components/sections/subscribes/subscribeTwo'
-import TestimonialOne from '@/components/sections/testimonials/testimonialOne'
+import dynamic from 'next/dynamic';
+import React from 'react';
+import BlogOne from '@/components/sections/blogs/blogOne';
+import HeroTwo from '@/components/sections/heroes/heroTwo';
+import StoryTwo from '@/components/sections/ourStories/storyTwo';
+import ProvideOne from '@/components/sections/provides/provideOne';
+import ServiceTwo from '@/components/sections/services/serviceTwo';
+import SubscribeTwo from '@/components/sections/subscribes/subscribeTwo';
 
-export const metadata = {
-  title: "Lunnoa Labs AI Agent Development",
-  description: "Lunnoa Labs offers AI Agent development services in Switzerland",
-};
+// Dynamically import Podcast component
+const Podcast = dynamic(() => import('@/components/sections/podcast/podcast_section'), {
+  ssr: false
+});
 
-const HomeTwo = () => {
+export default function HomeTwo() {
   return (
-    <main >
+    <main>
       <HeroTwo />
       <ServiceTwo/>
       <Podcast />
       <StoryTwo />
-      {/*<Dashboard />*/}
       <ProvideOne />
-      {/*<Strategy/>
-      <TestimonialOne/>
-      <Solutions/>*/}
       <Podcast />
-     {/* <FaqOne />*/}
       <BlogOne/>
       <SubscribeTwo/>
     </main>
-  )
+  );
 }
-
-export default HomeTwo
