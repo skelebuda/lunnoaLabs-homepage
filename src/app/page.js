@@ -4,14 +4,13 @@ import Dashboard from '@/components/sections/dashboard'
 import FaqOne from '@/components/sections/faqs/faqOne'
 import HeroTwo from '@/components/sections/heroes/heroTwo'
 import StoryTwo from '@/components/sections/ourStories/storyTwo'
-import PriceTwo from '@/components/sections/pricing/priceTwo'
+import Podcast from '@/components/sections/podcast/podcast_section'
 import ProvideOne from '@/components/sections/provides/provideOne'
 import ServiceTwo from '@/components/sections/services/serviceTwo'
 import Solutions from '@/components/sections/solutions'
 import Strategy from '@/components/sections/strategy'
 import SubscribeTwo from '@/components/sections/subscribes/subscribeTwo'
 import TestimonialOne from '@/components/sections/testimonials/testimonialOne'
-import Podcast from '@/components/sections/podcast/podcast_section'
 
 export const metadata = {
   title: "Lunnoa Labs AI Agent Development",
@@ -30,7 +29,7 @@ const HomeTwo = () => {
       {/*<Strategy/>
       <TestimonialOne/>
       <Solutions/>*/}
-      <PriceTwo />
+      <Podcast />
      {/* <FaqOne />*/}
       <BlogOne/>
       <SubscribeTwo/>
