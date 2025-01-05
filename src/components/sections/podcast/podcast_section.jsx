@@ -176,11 +176,7 @@ const Podcast = () => {
                         <Title size="5xl" className="max-w-[872px] pt-6 text-center">
                             {isGenerating ? (
                                 <>
-                                    <Highlight>Lights, Camera, AI!</Highlight> Our digital crew is crafting the perfect podcast for{' '}
-                                    <span className="text-primary font-bold">
-                                        {clientProfiles.find(p => p.id === selectedProfileId)?.client_name}
-                                    </span>
-                                    . 🎧 Studio magic in progress...
+                                    <Highlight>Lights, Camera, AI!</Highlight> Our digital crew is crafting the perfect podcast
                                 </>
                             ) : (
                                 <>
