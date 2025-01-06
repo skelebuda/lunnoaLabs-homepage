@@ -88,25 +88,30 @@ const Podcast = () => {
     const [isGenerating, setIsGenerating] = useState(false);
     const [error, setError] = useState(null);
     const [audioUrl, setAudioUrl] = useState(null);
+    const [stepComplete, setStepComplete] = useState(false);
+    const [activeTab, setActiveTab] = useState(null);
 
-    useEffect(() => {
-        console.log("Effect triggered with:", {
-            isGenerating,
-            currentStep,
-            progress,
-            processingComplete,
-            showPlayer
-        });
-    
+    useEffect(() => {    
         let progressInterval;
         if (isGenerating && currentStep) {
             setProgress(0);
+            setStepComplete(false);  // Reset step complete state
+
+            if (!activeTab) {
+                setActiveTab(currentStep);
+            }
+            
+            
             progressInterval = setInterval(() => {
                 setProgress(prev => {
                     const newProgress = prev + 2;
                     if (newProgress >= 100) {
                         clearInterval(progressInterval);
                         
+                        // Set step as complete
+                        setStepComplete(true);
+                        
+                        // Handle the recording (last) step differently
                         if (currentStep === "recording") {
                             setTimeout(() => {
                                 setProcessingComplete(true);
@@ -115,24 +120,29 @@ const Podcast = () => {
                                     setShowPlayer(true);
                                 }, 1000);
                             }, 1000);
+                        } else {
+                            // For non-recording steps, move to next step after delay
+                            setTimeout(() => {
+                                setProgress(0);
+                                setStepComplete(false);
+                                
+                                // Find current step index and move to next step
+                                const currentIndex = tabList.findIndex(tab => tab.id === currentStep);
+                                if (currentIndex < tabList.length - 1) {
+                                    setCurrentStep(tabList[currentIndex + 1].id);
+                                }
+                            }, 1000);
                         }
                         return 100;
                     }
                     return newProgress;
                 });
             }, 100);
-    
-            // Modify the timeout to log when it clears
-            setTimeout(() => {
-                clearInterval(progressInterval);
-                setProgress(0);
-            }, 5000);
         }
     
         return () => {
             if (progressInterval) {
                 clearInterval(progressInterval);
-                console.log("Cleanup: cleared progress interval");
             }
         };
     }, [currentStep, isGenerating]);
@@ -235,7 +245,6 @@ const Podcast = () => {
                                                                 size={"lg"} 
                                                                 className={`max-h-[64px] w-full group ${isSelected ? 'bg-primary text-white hover:bg-primary/90' : ''}`}
                                                                 variant={isSelected ? "default" : "outline"}
-                                                                disabled={isGenerating}
                                                             >
                                                                 {isSelected ? (
                                                                     <>
@@ -258,46 +267,51 @@ const Podcast = () => {
                     </div>
                 )}
                 {currentStep && (
-                <div className="lg:pt-20 pt-8">
-                    <Tabs value={currentStep}>
-                    <TabsList className="bg-transparent justify-between lg:flex-nowrap flex-wrap xl:gap-5 gap-2 w-full">
-                        {tabList.map(({ id, tab_icon, tab_name, index }) => {
-                            // Find the current step index
-                            const currentStepIndex = tabList.findIndex(tab => tab.id === currentStep);
-                            // Find this tab's index
-                            const thisTabIndex = tabList.findIndex(tab => tab.id === id);
-                            
-                            return (
-                                <TabsTrigger
-                                    key={id}
-                                    value={id}
-                                    disabled
-                                    className="relative dark:bg-[#1c242b] rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 overflow-hidden"
-                                >
-                                    {(id === currentStep || thisTabIndex < currentStepIndex) && (
-                                        <div 
-                                            className="absolute inset-0 bg-primary opacity-40 transition-all duration-300 ease-linear"
-                                            style={{ 
-                                                width: thisTabIndex < currentStepIndex ? '100%' : `${progress}%`,
-                                                zIndex: 0,
-                                                opacity: id === currentStep && progress === 0 ? '0' : '0.4',
-                                                transition: 'width 100ms linear, opacity 300ms ease'
-                                            }}
-                                        />
-                                    )}
+                    <div className="lg:pt-20 pt-8">
+                        <Tabs value={activeTab || currentStep} onValueChange={setActiveTab}>
+                            <TabsList className="bg-transparent justify-between lg:flex-nowrap flex-wrap xl:gap-5 gap-2 w-full">
+                                {tabList.map(({ id, tab_icon, tab_name, index }) => {
+                                    const currentStepIndex = tabList.findIndex(tab => tab.id === currentStep);
+                                    const thisTabIndex = tabList.findIndex(tab => tab.id === id);
                                     
-                                    {/* Content with higher z-index */}
-                                    <div className="relative z-10 flex items-center gap-2">
-                                        <Image
-                                            src={tab_icon}
-                                            alt="icon"
-                                            className="mr-3 xl:mr-0"
-                                        />
-                                        <span className="max-w-[119px] font-semibold text-lg">{tab_name}</span>
-                                    </div>
-                                </TabsTrigger>
-                            );
-                        })}
+                                    return (
+                                        <TabsTrigger
+                                            key={id}
+                                            value={id}
+                                            className="relative dark:bg-[#1c242b] rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 overflow-hidden"
+                                        >
+                                                                                    {(() => {
+                                            const isCompleted = thisTabIndex < currentStepIndex || (id === currentStep && stepComplete);
+                                            const isLastStep = id === "recording" && processingComplete;
+                                            const isLastStepComplete = id === "recording" && isLastStep;
+
+                                            return (
+                                                <div 
+                                                    className={`absolute inset-0 transition-all duration-300 ease-linear ${
+                                                        isLastStepComplete ? 'bg-green-500' : 'bg-primary'
+                                                    } opacity-40`}
+                                                    style={{ 
+                                                        width: isCompleted || isLastStep ? '100%' : 
+                                                            id === currentStep ? `${progress}%` : '0%',
+                                                        zIndex: 0,
+                                                        opacity: (id === currentStep && progress === 0) ? '0' : '0.4',
+                                                        transition: 'width 100ms linear, opacity 300ms ease'
+                                                    }}
+                                                />
+                                            );
+                                        })()}
+                                                
+                                            <div className="relative z-10 flex items-center gap-2">
+                                                <Image
+                                                    src={tab_icon}
+                                                    alt="icon"
+                                                    className="mr-3 xl:mr-0"
+                                                />
+                                                <span className="max-w-[119px] font-semibold text-lg">{tab_name}</span>
+                                            </div>
+                                        </TabsTrigger>
+                                    );
+                                })}
                     </TabsList>
 
                     {tabList.map(({ id, tab_content, lottiePath }) => (
