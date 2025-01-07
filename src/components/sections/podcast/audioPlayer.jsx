@@ -2,42 +2,44 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
-const AudioPlayer = ({ className , audioFile }) => {
+const AudioPlayer = ({ className, profileId }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [error, setError] = useState(null);
   const audioRef = useRef(null);
   
-  // Define the paths
-  const audioPath1 = '/audio/demographics.mp3';
-  const audioPath2 = '/audio/clientData.mp3';
-  const audioPath3 = '/audio/marlon.mp3';
+  // Update audioPathMap to use numeric IDs
+  const audioPathMap = {
+    1: '/audio/demographics.mp3',
+    2: '/audio/clientData.mp3',
+    3: '/audio/marlon.mp3'
+  };
 
-  // Determine which audio path to use
-  let audioPath = audioPath3; // default value
+  // Get audio path based on profile ID with fallback
+  const audioPath = audioPathMap[profileId] || audioPathMap[3];
   
-  console.log(audioFile)
-  if (audioFile === 1) {  
-    audioPath = audioPath1;
-  } else if (audioFile === 2) {
-    audioPath = audioPath2;
-  } else if (audioFile === 3) {
-    audioPath = audioPath3;
-  }
+  console.log('Current Profile ID:', profileId);
+  console.log('Selected Audio Path:', audioPath);
 
   useEffect(() => {
+    console.log('AudioPlayer mounted/updated with profileId:', profileId);
+    
     // Verify the audio file is accessible
-    fetch(audioPath)
-      .then(response => {
+    const checkAudio = async () => {
+      try {
+        const response = await fetch(audioPath);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        console.log('Audio file is accessible');
-      })
-      .catch(error => {
-        console.log('Error accessing audio file:', error);
+        console.log('Audio file is accessible:', audioPath);
+        setError(null);
+      } catch (error) {
+        console.error('Error accessing audio file:', error);
         setError(error);
-      });
-  }, [audioPath]); // Add audioPath as dependency
+      }
+    };
+
+    checkAudio();
+  }, [audioPath, profileId]);
 
   const togglePlayPause = async () => {
     if (audioRef.current) {
@@ -54,10 +56,6 @@ const AudioPlayer = ({ className , audioFile }) => {
       }
     }
   };
-
-  if (error) {
-    console.error('Audio error state:', error);
-  }
 
   return (
     <div className={`flex items-center space-x-4 ${className}`}>
@@ -78,6 +76,7 @@ const AudioPlayer = ({ className , audioFile }) => {
         ref={audioRef}
         controls
         preload="auto"
+        className="w-64"
         onError={(e) => {
           console.error('Audio element error:', e);
           setError(e);
@@ -96,7 +95,7 @@ const AudioPlayer = ({ className , audioFile }) => {
 
       {error && (
         <div className="text-red-500">
-          Error loading audio
+          Error loading audio: Please check if file exists at {audioPath}
         </div>
       )}
     </div>

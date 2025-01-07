@@ -2,6 +2,12 @@
 import React from 'react'
 import Title from '../../../components/ui/title'
 
+
+export const metadata = {
+    title: "Lunnoa Labs Terms of Service",
+    description: "Lunnoa Labs offers AI Agent development services in Switzerland",
+  };
+
 const TermsOfService = ({ sidebarShow }) => {
     return (
         <section className='lg:py-15 py-9'>

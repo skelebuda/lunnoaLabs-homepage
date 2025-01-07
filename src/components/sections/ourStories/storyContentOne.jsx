@@ -30,7 +30,7 @@ const StoryContentOne = () => {
 
                 <div className='flex items-center sm:gap-[32px] gap-6 md:pt-[55px] pt-7 pb-[22px]'>
                     <div>
-                    <AnalyticsButton />
+                    <AnalyticsButton buttonOrigin="Story_Content" ButtonName={"Let's Talk"} />
                     </div>
                     {/*
                     <div className='flex items-center gap-2'>

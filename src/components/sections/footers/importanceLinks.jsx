@@ -9,13 +9,8 @@ const ImportanceLinks = ({ color }) => {
             title: "Social",
             links: [
                 {
-                    id: 1,
-                    path: "https://x.com/",
-                    label: "Twitter"
-                },
-                {
                     id: 3,
-                    path: "https://linkedin.com/",
+                    path: "https://www.linkedin.com/company/lunnoalabs",
                     label: "LinkedIn"
                 }
             ]
@@ -27,7 +22,7 @@ const ImportanceLinks = ({ color }) => {
             links: [
                 {
                     id: 1,
-                    path: "#",
+                    path: "/terms-of-service",
                     label: "Terms"
                 },
                 {

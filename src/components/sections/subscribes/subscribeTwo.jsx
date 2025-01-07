@@ -31,7 +31,7 @@ const SubscribeTwo = () => {
                         <div className='relative flex items-center justify-between'>
                             <Dialog>
                                 <Link href="https://calendly.com/lunnoalabs/30min">
-                                <AnalyticsButton />
+                                <AnalyticsButton buttonOrigin="Subscribe_Section" ButtonName={"Let's Talk"}/>
                                     </Link>
                                 <DialogContent className="sm:max-w-[425px]">
                                     <DialogTitle>Book Your Free Consultation</DialogTitle>

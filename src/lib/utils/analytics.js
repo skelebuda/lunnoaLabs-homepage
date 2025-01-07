@@ -12,5 +12,6 @@ export const logEvent = (eventName, eventParams = {}) => {
     PAGE_VIEW: 'page_view',
     DOWNLOAD: 'download',
     CONTACT: 'contact',
+    SCHEDULE_APPOINTMENT_PODCAST: 'schedule_appointment_podcast'
     // Add more event names as needed
   };

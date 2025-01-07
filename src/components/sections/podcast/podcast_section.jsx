@@ -8,7 +8,6 @@ import { Loader2 } from "lucide-react";
 import Image from 'next/image';
 import icon_1 from "../../../../public/images/shapes/approach-icon4-1.png";
 import icon_2 from "../../../../public/images/shapes/approach-icon4-2.png";
-import icon_3 from "../../../../public/images/shapes/approach-icon4-3.png";
 import icon_4 from "../../../../public/images/shapes/approach-icon4-4.png";
 import icon_5 from "../../../../public/images/shapes/approach-icon4-5.png";
 import SlideUp from '../../animations/slideUp';
@@ -19,6 +18,7 @@ import animationData2 from '/public/images/lottie/search_documents.json'
 import animationData3 from '/public/images/lottie/writing.json'
 import animationData4 from '/public/images/lottie/recording.json'
 import AudioPlayer from './audioPlayer';
+import Link from 'next/link';
 
 
 
@@ -91,42 +91,42 @@ const Podcast = () => {
     const [stepComplete, setStepComplete] = useState(false);
     const [activeTab, setActiveTab] = useState(null);
 
+    useEffect(() => {
+        console.log('Debug States:', {
+            currentStep,
+            processingComplete,
+            selectedProfileId,
+            showPlayer,
+            isGenerating
+        });
+    }, [currentStep, processingComplete, selectedProfileId, showPlayer, isGenerating]);
+
     useEffect(() => {    
         let progressInterval;
         if (isGenerating && currentStep) {
             setProgress(0);
-            setStepComplete(false);  // Reset step complete state
-
+            setStepComplete(false);
+    
             if (!activeTab) {
                 setActiveTab(currentStep);
             }
-            
             
             progressInterval = setInterval(() => {
                 setProgress(prev => {
                     const newProgress = prev + 2;
                     if (newProgress >= 100) {
                         clearInterval(progressInterval);
-                        
-                        // Set step as complete
                         setStepComplete(true);
                         
-                        // Handle the recording (last) step differently
                         if (currentStep === "recording") {
-                            setTimeout(() => {
-                                setProcessingComplete(true);
-                                setTimeout(() => {
-                                    console.log("Showing player");
-                                    setShowPlayer(true);
-                                }, 1000);
-                            }, 1000);
+                            setProcessingComplete(true);
+                            // Remove the nested setTimeout and directly set showPlayer
+                            setShowPlayer(true);
+                            setActiveTab("recording");
                         } else {
-                            // For non-recording steps, move to next step after delay
                             setTimeout(() => {
                                 setProgress(0);
                                 setStepComplete(false);
-                                
-                                // Find current step index and move to next step
                                 const currentIndex = tabList.findIndex(tab => tab.id === currentStep);
                                 if (currentIndex < tabList.length - 1) {
                                     setCurrentStep(tabList[currentIndex + 1].id);
@@ -171,7 +171,7 @@ const Podcast = () => {
 
     const handleCardClick = (profile) => {
         if (isGenerating) return;
-        setSelectedProfileId(profile.id);
+        setSelectedProfileId(profile.id); // This should now pass the numeric ID (1, 2, or 3)
         generatePodcast(profile);
     };
 
@@ -326,22 +326,30 @@ const Podcast = () => {
                                         <Title size="4xl">{tabContent[id].title}</Title>
                                         <p className="pt-5 pb-7.5">{tabContent[id].description}</p>
                                         {id === "recording" && processingComplete && (
-                                        <div className="mt-6">
-                                            <p className="text-lg text-primary mb-4">
-                                                {showPlayer ? 
-                                                    "Your personalized podcast is ready to play!" :
-                                                    "Finalizing your podcast..."
-                                                }
-                                            </p>
-                                            {showPlayer && (
-                                                <AudioPlayer 
-                                                    audioUrl={audioUrl}
-                                                    className="mt-4"
-                                                    audioFile={selectedProfileId}
-                                                />
-                                            )}
-                                        </div>
-                                    )}
+                                            <div className="mt-6">
+                                                {console.log('AudioPlayer render attempt:', { 
+                                                    id, 
+                                                    processingComplete, 
+                                                    selectedProfileId,
+                                                    'id === recording': id === 'recording',
+                                                    'processingComplete value': processingComplete
+                                                })}
+                                                <p className="text-lg text-primary mb-4">
+                                                    Your personalized podcast is ready to play!
+                                                </p>
+                                                <div>
+                                                    <AudioPlayer 
+                                                        className="mt-4 mb-4"
+                                                        profileId={selectedProfileId}
+                                                    />
+                                                    <Button>
+                                                        <Link target='_blank' href={"https://calendly.com/lunnoalabs/30min"}>
+                                                            Schedule a call
+                                                        </Link>
+                                                    </Button> 
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                     <div className="pr-7.5 pl-7.5 lg:pl-0 lg:max-w-[540px] w-full pt-7.5 lg:pt-0">
                                         <Lottie
