@@ -146,6 +146,13 @@ const Podcast = () => {
             }
         };
     }, [currentStep, isGenerating]);
+
+    const handleClick = () => {
+        logEvent(analyticsEvents.SCHEDULE_APPOINTMENT_PODCAST, {
+            button_name: "Schedule a Call",
+            page_location: window.location.href
+        });
+    };
     
     const generatePodcast = async (profileData) => {
         if (!profileData) {
@@ -342,7 +349,7 @@ const Podcast = () => {
                                                         className="mt-4 mb-4"
                                                         profileId={selectedProfileId}
                                                     />
-                                                    <Button>
+                                                    <Button onClick={handleClick}>
                                                         <Link target='_blank' href={"https://calendly.com/lunnoalabs/30min"}>
                                                             Schedule a call
                                                         </Link>
