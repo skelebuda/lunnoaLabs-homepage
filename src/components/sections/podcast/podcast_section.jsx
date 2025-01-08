@@ -19,6 +19,7 @@ import animationData3 from '/public/images/lottie/writing.json'
 import animationData4 from '/public/images/lottie/recording.json'
 import AudioPlayer from './audioPlayer';
 import Link from 'next/link';
+import { analyticsEvents, logEvent } from '@/lib/utils/analytics';
 
 
 
