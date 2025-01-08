@@ -8,7 +8,7 @@ const Podcast = dynamic(() => import('@/components/sections/podcast/podcast_sect
 
 export const metadata = {
   title: "Lunnoa Labs Podcast",
-  description: "Lunnoa Labs offers AI Agent development services in Switzerland",
+  description: "Lunnoa Labs offers AI Agent development services in Zurich, Switzerland",
 };
 
 export default function HomeTwo() {
