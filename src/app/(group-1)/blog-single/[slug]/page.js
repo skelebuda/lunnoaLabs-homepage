@@ -8,10 +8,16 @@ import {PortableText} from '@portabletext/react'
 import imageUrlBuilder from "@sanity/image-url"
 import { client } from '@/lib/sanity/SanityClient'
 
-export const metadata = {
-  title: "Lunnoa Labs Blog",
-  description: "Lunnoa Labs offers AI Agent development services in Switzerland",
-};
+
+// Generate dynamic metadata based on the post
+export async function generateMetadata({ params }) {
+  const post = await client.fetch(POST_QUERY, params)
+  
+  return {
+    title: post.title || "Lunnoa Labs Blog", // Fallback to default if no title
+    description: `Read ${post.title} on Lunnoa Labs Blog`,
+  }
+}
 
 // Query to get a single post
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
