@@ -92,6 +92,7 @@ const Podcast = () => {
     const [stepComplete, setStepComplete] = useState(false);
     const [activeTab, setActiveTab] = useState(null);
 
+    /*
     useEffect(() => {
         console.log('Debug States:', {
             currentStep,
@@ -101,6 +102,7 @@ const Podcast = () => {
             isGenerating
         });
     }, [currentStep, processingComplete, selectedProfileId, showPlayer, isGenerating]);
+    */
 
     useEffect(() => {    
         let progressInterval;
@@ -151,6 +153,13 @@ const Podcast = () => {
     const handleClick = () => {
         logEvent(analyticsEvents.SCHEDULE_APPOINTMENT_PODCAST, {
             button_name: "Schedule a Call",
+            page_location: window.location.href
+        });
+    };
+
+    const handleClickGeneratePodcast = () => {
+        logEvent(analyticsEvents.GENERATE_PODCAST, {
+            button_name: "Generate Podcast",
             page_location: window.location.href
         });
     };
@@ -249,7 +258,8 @@ const Podcast = () => {
                                                             </ul>
                                                         </div>
                                                         <div className="pt-15 w-full">
-                                                            <Button 
+                                                            <Button
+                                                                onClick={handleClickGeneratePodcast}
                                                                 size={"lg"} 
                                                                 className={`max-h-[64px] w-full group ${isSelected ? 'bg-primary text-white hover:bg-primary/90' : ''}`}
                                                                 variant={isSelected ? "default" : "outline"}
@@ -335,13 +345,6 @@ const Podcast = () => {
                                         <p className="pt-5 pb-7.5">{tabContent[id].description}</p>
                                         {id === "recording" && processingComplete && (
                                             <div className="mt-6">
-                                                {console.log('AudioPlayer render attempt:', { 
-                                                    id, 
-                                                    processingComplete, 
-                                                    selectedProfileId,
-                                                    'id === recording': id === 'recording',
-                                                    'processingComplete value': processingComplete
-                                                })}
                                                 <p className="text-lg text-primary mb-4">
                                                     Your personalized podcast is ready to play!
                                                 </p>

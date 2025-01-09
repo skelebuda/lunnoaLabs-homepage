@@ -16,12 +16,9 @@ const AudioPlayer = ({ className, profileId }) => {
 
   // Get audio path based on profile ID with fallback
   const audioPath = audioPathMap[profileId] || audioPathMap[3];
-  
-  console.log('Current Profile ID:', profileId);
-  console.log('Selected Audio Path:', audioPath);
 
   useEffect(() => {
-    console.log('AudioPlayer mounted/updated with profileId:', profileId);
+
     
     // Verify the audio file is accessible
     const checkAudio = async () => {

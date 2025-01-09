@@ -22,7 +22,7 @@ const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
     const pathName = usePathname()
 
     const handleClick = () => {
-        logEvent(analyticsEvents.BUTTON_CLICK, {
+        logEvent(analyticsEvents.SCHEDULE_APPOINTMENT_HEADER, {
             button_name: "Lets Talk Header",
             page_location: window.location.href
         });
@@ -66,10 +66,10 @@ const HeaderTwo = ({ haveOvcanvsIcon, haveShadow }) => {
                                     </ul>
                                 </nav>
                                 <div className='hidden xl:flex items-center gap-5'>
-                                <Button>
-                                <Link target='_blank' href={"https://calendly.com/lunnoalabs/30min"}>
-                                    Schdule a call
-                                </Link>
+                                <Button onClick={handleClick}>
+                                    <Link target='_blank' href={"https://calendly.com/lunnoalabs/30min"}>
+                                        Schedule a call
+                                    </Link>
                                 </Button> 
                                     {/*
                                     <Offcanvas>
