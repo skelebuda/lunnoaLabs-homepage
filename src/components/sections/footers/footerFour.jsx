@@ -29,7 +29,7 @@ const FooterFour = () => {
             <div className='bg-muted dark:bg-accent mt-[54px] relative z-10'>
                 <div className='max-w-[1350px] mx-auto px-[15px] flex xl:flex-row flex-col justify-between items-center py-7.5 text-white'>
                     <p>Designed and Developed By <p className='text-primary-foreground font-medium relative hover-underline after:h-[1px]'>Lunnoa GmbH</p></p>
-                    <p>Copyright: © 2024. All Rights Reserved</p>
+                    <p>Copyright: © 2025. All Rights Reserved</p>
                 </div>
             </div>
         </footer>

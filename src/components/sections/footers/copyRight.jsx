@@ -8,7 +8,7 @@ const CopyRight = ({ className }) => {
         <div className='bg-accent'>
             <div className={cn(`flex xl:flex-row flex-col justify-between items-center text-center lg:text-start py-7.5 ${className}`)}>
                 <p>Designed and Developed By <p className='text-primary-foreground font-medium relative hover-underline after:h-[1px]'>Lunnoa GmbH</p></p>
-                <p>Copyright: © 2024. All Rights Reserved</p>
+                <p>Copyright: © 2025. All Rights Reserved</p>
             </div>
         </div>
 
