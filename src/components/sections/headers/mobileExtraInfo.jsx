@@ -27,7 +27,7 @@ const MobileExtraInfo = () => {
                 <ul className='mb-[26px]'>
                     <li className='flex items-center gap-3'>
                         <span className='mt-[3px]'><FaRegEnvelope /></span>
-                        <Link href={"mailto:contact@nextmarketing.com"} className='text-base'>info@lunnoalabs.ch</Link>
+                        <Link href={"mailto:contact@nextmarketing.com"} className='text-base'>sasakelebuda@lunnoalabs.ch</Link>
                     </li>
                     <li className='flex items-center gap-3 mt-[9px]'>
                         <span><FaPhoneFlip /></span>
