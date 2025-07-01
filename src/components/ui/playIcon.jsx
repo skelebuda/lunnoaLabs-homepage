@@ -21,8 +21,8 @@ const PlayIcon = ({ playOne, color }) => {
                         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] z-[-1] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:bg-[rgba(46,77,254,0.3)] after:rounded-full after:animate-spring-three'></div>
                     </div>
                     :
-                    <div onClick={() => setOpen(true)} className={cn(`w-12 h-12 rounded-full flex justify-center items-center border-[3px] border-foreground dark:border-muted cursor-pointer hover:border-primary transition-all duration-300 group border-${color} dark:border-${color} ${color}`)}>
-                        <span className={cn(`text-2xl ml-1 dark:text-muted group-hover:text-primary-foreground transition-all duration-300 dark:text-${color}`)}>
+                    <div onClick={() => setOpen(true)} className={cn(`w-12 h-12 rounded-full flex justify-center items-center border-[3px] border-foreground cursor-pointer hover:border-primary transition-all duration-300 group border-${color} ${color}`)}>
+                        <span className={cn(`text-2xl ml-1 group-hover:text-primary-foreground transition-all duration-300 text-${color}`)}>
                             <Play />
                         </span>
                     </div>

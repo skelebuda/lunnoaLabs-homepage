@@ -12,7 +12,7 @@ const MobileExtraInfo = () => {
                     headerExtraInfo.map(({ icon, id, label, link }) => {
                         return (
                             <li key={id} className='py-2.5'>
-                                <Link href={link} className='flex items-center gap-[15px] font-semibold text-secondary-foreground dark:text-muted-foreground'>
+                                <Link href={link} className='flex items-center gap-[15px] font-semibold text-secondary-foreground'>
                                     {icon}
                                     <span className='font-semibold'>{label}</span>
                                 </Link>
@@ -23,7 +23,7 @@ const MobileExtraInfo = () => {
 
             </ul>
             */}
-            <div className='text-secondary-foreground dark:text-muted-foreground px-4 mt-10'>
+            <div className='text-secondary-foreground px-4 mt-10'>
                 <ul className='mb-[26px]'>
                     <li className='flex items-center gap-3'>
                         <span className='mt-[3px]'><FaRegEnvelope /></span>

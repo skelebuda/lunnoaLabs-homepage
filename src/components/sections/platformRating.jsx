@@ -12,7 +12,7 @@ import { ratingData } from '@/lib/fackData/ratingData';
 const PlatformRating = () => {
     return (
         <div className='container lg:pt-15 pt-9 overflow-x-hidden'>
-            <div className='lg:py-12.5 py-6 xl:pl-12 pl-4 lg:pr-0 pr-4 bg-destructive dark:bg-accent border border-[#B0C2E2] dark:border-[#3f4652] rounded-[30px] relative after:absolute after:right-0 after:top-0 after:h-full after:w-16 after:rounded-tr-[30px] after:rounded-br-[30px] after:z-10 lg:after:bg-[linear-gradient(270deg,_#F2F4FB_2.14%,_rgba(242,_244,_251,_0.00)_191.43%)] dark:lg:after:bg-[linear-gradient(270deg,_#202932_2.14%,_rgba(242,_244,_251,_0.00)_191.43%)]'>
+            <div className='lg:py-12.5 py-6 xl:pl-12 pl-4 lg:pr-0 pr-4 bg-destructive border border-[#B0C2E2] rounded-[30px] relative after:absolute after:right-0 after:top-0 after:h-full after:w-16 after:rounded-tr-[30px] after:rounded-br-[30px] after:z-10 lg:after:bg-[linear-gradient(270deg,_#F2F4FB_2.14%,_rgba(242,_244,_251,_0.00)_191.43%)]'>
                 <div className='grid 2xl:grid-cols-[43%_auto] xl:grid-cols-[50%_auto] lg:grid-cols-[55%_auto] grid-cols-1 justify-between lg:items-center gap-5'>
                     <div className='grid sm:grid-cols-2 grid-cols-1 xl:gap-12.5 gap-6'>
                         <div className='bg-primary rounded-2xl xl:px-7.5  px-5 xl:pt-7.5 xl:pb-[22px] py-4 flex justify-between gap-7 rating-platform'>

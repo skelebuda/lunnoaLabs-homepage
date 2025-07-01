@@ -14,7 +14,7 @@ const UserList = ({ userList }) => {
                 })
             }
             <div className='rounded-full bg-primary w-11 h-11 -ml-2.5 first:-ml-0 flex justify-center items-center border-2 border-background'>
-                <span className='text-secondary-foreground dark:text-muted-foreground font-semibold text-base'>7K+</span>
+                <span className='text-secondary-foreground font-semibold text-base'>7K+</span>
             </div>
         </div>
     )

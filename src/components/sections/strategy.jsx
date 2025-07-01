@@ -12,8 +12,7 @@ const Strategy = () => {
                 <div className='grid xl:grid-cols-[auto_642px] lg:grid-cols-[auto_530px] grid-cols-1 xl:gap-15 gap-5'>
                     <div className='relative'>
                         <div className='flex justify-center pr-12.5 lg:pr-0'>
-                            <Image src="/images/resource/strategy.png" width={626} height={551} alt="bg" className='rounded-[30px] dark:hidden' />
-                            <Image src="/images/resource/strategy-dark.png" width={626} height={551} alt="bg" className='rounded-[30px] hidden dark:block' />
+                                            <Image src="/images/resource/strategy.png" width={626} height={551} alt="bg" className='rounded-[30px]' />
                         </div>
                        
                     </div>

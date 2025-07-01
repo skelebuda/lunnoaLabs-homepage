@@ -36,7 +36,7 @@ export default ServiceFour
 const Card = ({ id, service_name, description, icons }) => {
     return (
         <SlideUp id={id}>
-            <div className='relative text-center lg:text-left rounded-[15px] pt-[200px] pb-20 px-6 bg-[rgba(226,231,255,0.6)] dark:bg-[#1d252d] border-2 border-[rgba(0,31,63,0.15)] dark:border-[#374049] overflow-hidden group'>
+                                <div className='relative text-center lg:text-left rounded-[15px] pt-[200px] pb-20 px-6 bg-[rgba(226,231,255,0.6)] border-2 border-[rgba(0,31,63,0.15)] overflow-hidden group'>
                 <div className='bg-no-repeat opacity-[0.22] absolute top-0 left-0 w-full h-full group-hover:translate-y-[-65px] transition-all duration-500 bg-[center_top] lg:bg-left-top' style={{ backgroundImage: `url(${icons[0].src})` }}></div>
                 <div className='relative flex justify-center lg:justify-start'>
                     <Image src={icons[1]} alt='icon' className='group-hover:rotate-[70deg] transition-all duration-500' />

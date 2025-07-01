@@ -30,7 +30,7 @@ const MobileMenu = ({ data }) => {
                 <SheetTrigger>
                     <MdMenu className='text-primary-foreground text-5xl -mb-2' />
                 </SheetTrigger>
-                <SheetContent side="left" className="bg-muted dark:bg-accent">
+                <SheetContent side="left" className="bg-muted">
                     <div className='overflow-y-auto overflow-x-hidden no-scrollbar h-full px-0 py-7.5'>
                         <div className='flex justify-start mt-7'>
                             <Link href={"/"}>

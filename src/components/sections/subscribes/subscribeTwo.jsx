@@ -32,7 +32,7 @@ const SubscribeTwo = () => {
                             <Title size={"5xl"} className={"max-w-[707px]"}>Ready to Automate Your Business Processes?</Title>
                             <p>Let's discuss how AI agents can streamline your operations. Book a free 30-minute consultation to explore the possibilities.</p>
                             <div className='absolute -right-20 top-1/2 -translate-y-1/2 lg:block hidden'>
-                                <Image src={"/images/shapes/business-consultant-cta-arrow.png"} width={188} height={39} className='dark:brightness-100 dark:invert' alt='arrow' />
+                                <Image src={"/images/shapes/business-consultant-cta-arrow.png"} width={188} height={39} alt='arrow' />
                             </div>
                         </div>
                         <div className='relative flex items-center justify-between'>

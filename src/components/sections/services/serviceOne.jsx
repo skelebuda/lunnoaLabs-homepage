@@ -21,10 +21,10 @@ const ServiceOne = () => {
                 <SlideUp>
                     <div className='bg-primary rounded-2.5xl lg:pt-16 pt-10 lg:pb-20 pb-14 lg:px-12.5 px-7.5 flex items-center relative'>
                         <div className='sm:max-w-[560px]'>
-                            <Title size={"5xl"} className={"text-secondary-foreground dark:text-white max-w-[502px]"}>Improve your website's visibility</Title>
-                            <p className='pt-[15px] text-secondary-foreground font-semibold pb-11 dark:text-white'>Boost your online visibility and reach a wider audience by implementing strategic techniques to optimize your website for top-notch performance on search engines.</p>
+                            <Title size={"5xl"} className={"text-secondary-foreground max-w-[502px]"}>Improve your website's visibility</Title>
+                            <p className='pt-[15px] text-secondary-foreground font-semibold pb-11'>Boost your online visibility and reach a wider audience by implementing strategic techniques to optimize your website for top-notch performance on search engines.</p>
 
-                            <Button size="lg" variant={"destructive"} asChild className="hover:bg-transparent hover:text-secondary-foreground dark:bg-white dark:border-white dark:hover:bg-transparent dark:hover:text-white">
+                            <Button size="lg" variant={"destructive"} asChild className="hover:bg-transparent hover:text-secondary-foreground">
                                 <Link href={"/pricing"}>  Get started for Free </Link>
                             </Button>
 
@@ -84,8 +84,8 @@ const SmallCardBackground = ({ title, src, link }) => {
     return (
         <div className='bg-primary lg:px-7.5 px-5 pt-7.5 pb-[90px] rounded-2.5xl bg-contain bg-center bg-no-repeat h-full' style={{ backgroundImage: `url(/images/shapes/service-shape1-1.png)` }}>
             {src && <div className='bg-primary text-white w-15 h-15 rounded-full flex justify-center items-center'>{src}</div>}
-            <h5 className='lg:text-[32px] text-2xl font-bold leading-[120%] text-secondary-foreground pt-7.5 dark:text-white'>{title}</h5>
-            <Button asChild className="rounded-full bg-background border-background text-primary-foreground mt-[34px] hover:text-secondary-foreground dark:bg-white dark:border-white dark:hover:bg-transparent dark:text-primary-foreground dark:hover:text-white">
+                                    <h5 className='lg:text-[32px] text-2xl font-bold leading-[120%] text-secondary-foreground pt-7.5'>{title}</h5>
+            <Button asChild className="rounded-full bg-background border-background text-primary-foreground mt-[34px] hover:text-secondary-foreground">
                 <Link href={link}> View More <RightArrow /></Link>
             </Button>
 

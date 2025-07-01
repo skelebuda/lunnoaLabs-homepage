@@ -31,7 +31,7 @@ const StoryContentFour = () => {
                 <ProgressBar finalWidth={98} title={"Client Satisfaction"} />
             </div>
 
-            <Button asChild variant="outline" className="dark:text-muted-foreground">
+                            <Button asChild variant="outline">
                 <Link href={"/services"}> Discover more </Link>
             </Button>
         </SlideUp >

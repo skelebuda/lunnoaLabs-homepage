@@ -9,7 +9,7 @@ import { testimonialDataThree } from '@/lib/fackData/testimonialDataTwo'
 
 const TestimonialThree = () => {
     return (
-        <section className='lg:pt-15 pt-9 relative after:absolute after:bottom-0 after:left-0 after:w-full after:max-h-[552px] after:h-full after:bg-[linear-gradient(180deg,_rgba(255,255,255,0.00)_0%,_#FFF_51.94%)] dark:after:bg-[linear-gradient(180deg,_rgba(25,31,37,0.12)_0%,_#191F25_62.94%)]'>
+        <section className='lg:pt-15 pt-9 relative after:absolute after:bottom-0 after:left-0 after:w-full after:max-h-[552px] after:h-full after:bg-[linear-gradient(180deg,_rgba(255,255,255,0.00)_0%,_#FFF_51.94%)]'>
             <div className='max-w-[1366px] mx-auto px-[15px]'>
                 <SlideUp>
                     <div className='flex flex-col items-center'>
@@ -17,7 +17,7 @@ const TestimonialThree = () => {
                         <Title size={"5xl"} className="max-w-[869px] pt-6 text-center">Client Success Stories: Our Social Proof of Digital Excellence</Title>
                     </div>
                 </SlideUp>
-                <div className='relative after:absolute after:top-0 after:left-0 after:w-full after:max-h-[250px] after:h-full after:bg-[linear-gradient(180deg,_#fff_30%,_#fff_0%,_rgba(255,255,255,0)_74%)] dark:after:bg-[linear-gradient(180deg,_#191F25_30%,_#191F25_0%,_rgba(25,31,37,0.12)_74%)]'>
+                <div className='relative after:absolute after:top-0 after:left-0 after:w-full after:max-h-[250px] after:h-full after:bg-[linear-gradient(180deg,_#fff_30%,_#fff_0%,_rgba(255,255,255,0)_74%)]'>
                     <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 max-h-[1190px] overflow-hidden'>
 
                         <div className="scroll-area" data-dir="top" data-speed="fast">

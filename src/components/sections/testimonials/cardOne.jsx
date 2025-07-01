@@ -10,10 +10,10 @@ const CardOne = ({rating, name, position, src, review}) => {
             <div className='py-5 lg:pl-20 pl-7 lg:pr-[72px] pr-7 bg-primary rounded-tl-[30px] rounded-tr-[30px] lg:rounded-tr-none lg:rounded-bl-[30px]'>
                 <div className='h-full content-center'>
                     <Rating star={rating} />
-                    <Title size={"2xl"} className={"text-secondary-foreground mt-2 dark:text-white min-h-[196px] sm:min-h-24 lg:min-h-max"}>{review}</Title>
+                    <Title size={"2xl"} className={"text-secondary-foreground mt-2 min-h-[196px] sm:min-h-24 lg:min-h-max"}>{review}</Title>
                     <div className='lg:pt-10 pt-6'>
-                        <h5 className='text-1xl font-semibold text-secondary-foreground dark:text-white'>{name}</h5>
-                        <p className='text-secondary-foreground flex items-center gap-1 pt-1 dark:text-white'> <span className='w-5 h-[1px] bg-background dark:bg-muted-foreground block'></span> <span>{position}</span> </p>
+                                    <h5 className='text-1xl font-semibold text-secondary-foreground'>{name}</h5>
+            <p className='text-secondary-foreground flex items-center gap-1 pt-1'> <span className='w-5 h-[1px] bg-background block'></span> <span>{position}</span> </p>
                     </div>
                 </div>
             </div>

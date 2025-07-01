@@ -22,7 +22,7 @@ const ServiceSeven = () => {
                                 servicesDataTwo.map(({ id, description, icon_1, service_name }) => {
                                     return (
                                         <div key={id} className='lg:pt-15 pt-8 text-center flex flex-col items-center group'>
-                                            <div className='md:w-[85px] md:h-[85px] w-16 h-16 md:p-6 p-4 rounded-full flex justify-center items-center lg:mb-7.5 mb-4 bg-primary text-secondary-foreground dark:text-muted-foreground icon mx-auto'>
+                                            <div className='md:w-[85px] md:h-[85px] w-16 h-16 md:p-6 p-4 rounded-full flex justify-center items-center lg:mb-7.5 mb-4 bg-primary text-secondary-foreground icon mx-auto'>
                                                 <span className='transition-all duration-500 group-hover:scale-90'>{icon_1}</span>
                                             </div>
                                             <h5 className='text-xl font-extrabold text-muted-foreground leading-[140%] text-center'>

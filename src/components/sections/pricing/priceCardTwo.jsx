@@ -12,7 +12,7 @@ const PriceCardTwo = ({ id, plan_name, isTag, price, link, services, info, isChe
                 <div className='px-7.5'>
                     <div className='flex justify-between items-center'>
                         <h5 className='text-2xl font-extrabold text-muted-foreground'>{plan_name}</h5>
-                        {isTag && <p className='bg-primary py-2.4 px-5 max-h-[33px] font-semibold text-secondary-foreground dark:text-muted-foreground rounded-full'>Value</p>}
+                        {isTag && <p className='bg-primary py-2.4 px-5 max-h-[33px] font-semibold text-secondary-foreground rounded-full'>Value</p>}
                     </div>
                     {cardThree && <p className='pt-2'> {info}</p>}
                     <div className='flex items-start py-2.5'>
@@ -54,7 +54,7 @@ const PriceCardTwo = ({ id, plan_name, isTag, price, link, services, info, isChe
                                                 isavailable ?
                                                     <Image src={"/images/shapes/check-icon-blue.svg"} width={20} height={20} alt="check icon" />
                                                     :
-                                                    <Image src={"/images/shapes/check-icon-gray.svg"} width={20} height={20} alt="check icon" className='dark:brightness-50' />
+                                                    <Image src={"/images/shapes/check-icon-gray.svg"} width={20} height={20} alt="check icon" />
                                             }
                                             <span className='lg:text-lg text-base'>{service}</span>
                                         </li>

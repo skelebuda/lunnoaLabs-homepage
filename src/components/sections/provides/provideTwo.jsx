@@ -41,7 +41,7 @@ const ProvideTwo = ({ order_1, order_0 }) => {
                     </div>
                     <div className={order_0}>
                         <SlideUp>
-                            <div className='bg-[rgba(226,231,255,0.22)] dark:bg-[#202932] rounded-[30px] relative after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[linear-gradient(90deg,_#F4F6FF_0%,_rgba(244,246,255,0.00)_20.2%,_rgba(244,_246,_255,_0.00)_72.88%,_#F4F6FF_100%)] after:dark:bg-[linear-gradient(90deg,_#202932_0%,_rgba(32,41,50,0)_16.2%,_rgba(32,41,50,0)_76.88%,_#202932_100%)] after:z-10 after:rounded-[30px]'>
+                            <div className='bg-[rgba(226,231,255,0.22)] rounded-[30px] relative after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[linear-gradient(90deg,_#F4F6FF_0%,_rgba(244,246,255,0.00)_20.2%,_rgba(244,_246,_255,_0.00)_72.88%,_#F4F6FF_100%)] after:z-10 after:rounded-[30px]'>
                                 <div className='bg-contain bg-bottom bg-no-repeat h-full max-h-[400px] w-full absolute bottom-7 left-0' style={{ backgroundImage: `url(/images/shapes/provide-bg3-1.png)` }}></div>
                                 <div className='lg:px-14 px-5 lg:pt-[58px] pt-8 relative z-[15]'>
                                     <Title size={"4xl"}>Freedom to integrate all the tools you need</Title>

@@ -223,7 +223,7 @@ const Podcast = () => {
                     <div className="flex flex-col items-center gap-8 mt-12">
                         <div className="text-center max-w-2xl">
                             <h3 className="text-2xl font-semibold mb-4">Experience Our Enterprise Podcast Solution</h3>
-                            <p className="text-gray-600 dark:text-gray-300 mb-6">
+                            <p className="text-gray-600 mb-6">
                                 Select a client profile to see how our system creates personalized podcasts using your CRM data, content management system, and brand voice.
                             </p>
                         </div>
@@ -296,7 +296,7 @@ const Podcast = () => {
                                         <TabsTrigger
                                             key={id}
                                             value={id}
-                                            className="relative dark:bg-[#1c242b] rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 overflow-hidden"
+                                            className="relative rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 overflow-hidden"
                                         >
                                                                                     {(() => {
                                             const isCompleted = thisTabIndex < currentStepIndex || (id === currentStep && stepComplete);
@@ -339,7 +339,7 @@ const Podcast = () => {
                             className="lg:pt-7.5 md:pt-[110px] sm:pt-[190px] pt-[360px]"
                         >
                             <SlideUp>
-                                <div className="flex lg:flex-row flex-col justify-between bg-[#F4F6FF] dark:bg-[#1c242b] py-7.5 rounded-[30px]">
+                                <div className="flex lg:flex-row flex-col justify-between bg-[#F4F6FF] py-7.5 rounded-[30px]">
                                     <div className="lg:pl-[86px] pl-7.5 pr-7.5 lg:pr-0 xl:max-w-[660px] lg:max-w-[550px]">
                                         <Title size="4xl">{tabContent[id].title}</Title>
                                         <p className="pt-5 pb-7.5">{tabContent[id].description}</p>

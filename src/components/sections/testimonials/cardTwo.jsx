@@ -5,7 +5,7 @@ import React from 'react'
 const CardTwo = ({ rating, name, position, src, review }) => {
     return (
         <div className='my-15 slider__img'>
-            <div className='max-w-[1019px] mx-auto bg-background dark:bg-accent rounded-[30px] shadow-[0px_4px_40px_0px_rgba(19,15,38,0.1019607843)] lg:px-[90px] px-7 lg:py-15 py-8 relative'>
+            <div className='max-w-[1019px] mx-auto bg-background rounded-[30px] shadow-[0px_4px_40px_0px_rgba(19,15,38,0.1019607843)] lg:px-[90px] px-7 lg:py-15 py-8 relative'>
                 <div className='absolute z-[-1] md:-bottom-[37px] -bottom-[25px] left-1/2 -translate-x-1/2 md:w-[calc(100%-130px)] w-[calc(100%-50px)] h-1/2 bg-background rounded-[30px] shadow-[0px_4px_40px_0px_rgba(19,15,38,0.1019607843)]'></div>
                 <div className='grid md:grid-cols-[200px_auto] grid-cols-1 gap-11'>
                     <div className='relative'>

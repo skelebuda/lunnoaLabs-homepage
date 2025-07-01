@@ -36,7 +36,7 @@ const HeroTwo = () => {
                     <Image src={'images/banner/bpm.jpg'} width={1320} height={604} alt='AI automation visualization' className='mx-auto lg:rounded-[30px] rounded-2xl min-h-[400px] w-auto object-cover' />
                     {/*<PlayIcon playOne={true}/>*/}
                 </div>
-                <PartnersSlider data={partnersData.slice(0, 5)} className={"shadow-[0px_4px_40px_0px_rgba(44,54,109,0.2509803922)] max-w-[1005px] mx-auto lg:-mt-14 -mt-6 z-[1] relative dark:bg-white"} />
+                <PartnersSlider data={partnersData.slice(0, 5)} className={"shadow-[0px_4px_40px_0px_rgba(44,54,109,0.2509803922)] max-w-[1005px] mx-auto lg:-mt-14 -mt-6 z-[1] relative"} />
 
             </div>
         </section>

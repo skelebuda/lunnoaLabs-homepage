@@ -67,7 +67,7 @@ const Approach = () => {
                             {
                                 tabList.map(({ id, tab_icon, tab_name }) => {
                                     return (
-                                        <TabsTrigger key={id} value={id} className={"bg-[#F4F6FF] dark:bg-[#1c242b] rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 data-[state=active]:bg-primary dark:data-[state=active]:bg-primary data-[state=active]:text-white overflow-hidden"}>
+                                        <TabsTrigger key={id} value={id} className={"bg-[#F4F6FF] rounded-[10px] lg:basis-[20%] md:basis-[25%] sm:basis-[33%] basis-1/2 grow xl:px-6 px-2 xl:py-4 py-2 whitespace-normal text-start xl:gap-5 gap-1 data-[state=active]:bg-primary data-[state=active]:text-white overflow-hidden"}>
                                             <Image src={tab_icon} alt='icon' className={`${id === tab ? "brightness-0 invert" : ""} mr-3 xl:mr-0`} />
                                             <span className='max-w-[119px] font-semibold text-lg'>{tab_name}</span>
                                         </TabsTrigger>
@@ -80,7 +80,7 @@ const Approach = () => {
                                 return (
                                     <TabsContent key={id} value={id} className={"lg:pt-7.5 md:pt-[110px] sm:pt-[190px] pt-[360px]"}>
                                         <SlideUp>
-                                            <div className='flex lg:flex-row flex-col justify-between bg-[#F4F6FF] dark:bg-[#1c242b] py-7.5 rounded-[30px]'>
+                                            <div className='flex lg:flex-row flex-col justify-between bg-[#F4F6FF] py-7.5 rounded-[30px]'>
                                                 <div className='lg:pl-[86px] pl-7.5 pr-7.5 lg:pr-0 xl:max-w-[660px] lg:max-w-[550px] '>
                                                     <Title size={"4xl"}>Strategic Planning Tailored to Your Vision</Title>
                                                     <p className='pt-5 pb-7.5'>Our strategic planning process begins with a deep dive into your business objectives, target audience, and competitive landscape. We meticulously analyze market trends and consumer insights to craft customized strategies.</p>

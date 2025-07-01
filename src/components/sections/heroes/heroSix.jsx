@@ -9,7 +9,7 @@ import PlayIcon from '@/components/ui/playIcon';
 function HeroSix() {
     return (
         <section className='container pb-15'>
-            <div className='bg-[rgba(226,231,255,0.4)] dark:bg-[#1c232a] rounded-[30px] lg:pl-[52px] lg:pr-0 pl-4 pr-4 border-2 border-[rgba(0,31,63,0.05)] overflow-y-hidden overflow-x-hidden relative'>
+            <div className='bg-[rgba(226,231,255,0.4)] rounded-[30px] lg:pl-[52px] lg:pr-0 pl-4 pr-4 border-2 border-[rgba(0,31,63,0.05)] overflow-y-hidden overflow-x-hidden relative'>
                 <div className='grid lg:grid-cols-2 grid-cols-1 relative z-10'>
                     {/* ----- left side start */}
                     <div className='lg:pt-[132px] lg:pb-[120px] pt-12 pb-12'>
