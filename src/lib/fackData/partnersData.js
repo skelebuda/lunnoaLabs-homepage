@@ -10,11 +10,6 @@ export const partnersData = [
         src:"/images/shapes/langchain.png",
     },
     {
-        id:3,
-        link:"",
-        src:"/images/shapes/n8n-logo.png",
-    },
-    {
         id:4,
         link:"",
         src:"/images/shapes/open_ai.png",
